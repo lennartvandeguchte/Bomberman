@@ -1,0 +1,7 @@
+__pycache__/
+node_modules
+typescript/dist
+
+.idea/
+bomber-env/
+logs/

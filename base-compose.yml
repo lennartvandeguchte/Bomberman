@@ -1,0 +1,53 @@
+version: "3"
+services:
+    game-server:
+        image: coderone.azurecr.io/game-server:1608
+        volumes:
+            - ./logs:/app/logs
+
+    python3-agent:
+        build:
+            context: python3
+            dockerfile: Dockerfile
+
+    python3-agent-lefties:
+        build:
+            context: python3
+            dockerfile: Dockerfile_lefties
+
+    python3-agent-uppers:
+        build:
+            context: python3
+            dockerfile: Dockerfile_uppers
+
+    python3-agent-runner:
+        build:
+            context: python3
+            dockerfile: Dockerfile_runners
+
+#    python3-agent-dev:
+#        build:
+#            context: python3
+#            dockerfile: Dockerfile.dev
+#        volumes:
+#            - ./python3:/app
+#
+#    python3-fwd:
+#        build:
+#            context: python3
+#            dockerfile: Dockerfile.fwd
+#
+#    python3-fwd-dev:
+#        build:
+#            context: python3
+#            dockerfile: Dockerfile.fwd.dev
+#        volumes:
+#            - ./python3:/app
+#
+#    python3-gym-dev:
+#        build:
+#            context: python3
+#            dockerfile: Dockerfile.gym.dev
+#        volumes:
+#            - ./python3:/app
+
